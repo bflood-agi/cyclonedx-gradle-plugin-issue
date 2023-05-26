@@ -24,7 +24,7 @@ Select build script DSL:
   2: Kotlin
 Enter selection (default: Groovy) [1..2]
 
-Project name (default: cyclonedx-bom-bug):
+Project name (default: cyclonedx-gradle-plugin-issue):
 
 Source package (default: cyclonedx.bom.bug): com.example
 
