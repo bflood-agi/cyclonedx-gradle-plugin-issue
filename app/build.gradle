@@ -1,0 +1,24 @@
+plugins {
+    id 'com.example.java-application-conventions'
+    id 'org.cyclonedx.bom' version '1.7.4'
+}
+
+dependencies {
+    implementation 'org.apache.commons:commons-text'
+    implementation project(':utilities')
+}
+
+application {
+    mainClass = 'com.example.app.App'
+}
+
+tasks.named('cyclonedxBom') {
+    includeConfigs = ['runtimeClasspath']
+    projectType = 'application'
+    outputFormat = 'json'
+    includeLicenseText = false
+
+    rootProject.subprojects.each {proj ->
+        dependsOn proj.tasks.named('jar')
+    }
+}

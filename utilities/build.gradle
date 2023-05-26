@@ -1,0 +1,9 @@
+plugins {
+    id 'com.example.java-library-conventions'
+}
+
+dependencies {
+    api project(':list')
+}
+
+archivesBaseName = "${rootProject.name}-${name}"
